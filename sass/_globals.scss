@@ -1,0 +1,265 @@
+@use "components";
+
+html {
+    max-width: 100vw;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.container {
+    min-width: 100vw;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 4rem;
+    border-bottom: solid 1px #ddd;
+    align-items: center;
+    flex-wrap: nowrap;
+
+    .logo {
+        img {
+            height: 20px;
+            width: 112px;
+        }
+    }
+}
+
+.sec-home {
+    display: flex;
+    padding: 5rem 10rem;
+    width: 100%;
+    align-items: center;
+
+    .home-cta {
+        flex: 1;
+
+        .home-title {
+            width: 27rem;
+            font-weight: 400;
+        }
+
+        .home-description {
+            width: 27rem;
+            font-weight: 700;
+            color: #0a0b0d;
+        }
+
+        .cta-text {
+            color: components.$color-main;
+            font-weight: 600;
+            display: inline;
+
+            &:hover {
+                text-decoration: underline;
+                cursor: pointer;
+            }
+        }
+    }
+}
+
+.sec-features {
+
+    .intro {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 2rem;
+        h2 {
+            font-size: 2.5rem;
+            color: black;
+        }
+
+        p {
+            color: #5b6185;
+        }
+    }
+
+    .features {
+        display: flex;
+        justify-content: center;
+        gap: none;
+        max-width: 85%;
+        margin: auto;
+        align-items: center;
+        flex-wrap: wrap;
+        .text {
+            max-width: 40%;
+            flex:1;
+            .feature {
+                display: flex;
+                flex-direction: row;
+                align-items: baseline;
+                gap: 1rem;
+                .description {
+                    .title {
+                        font-size: 1.25rem;
+                    }
+                    .desc-text {
+                        font-size: 1rem;
+                        color: grey;
+                        max-width: 75%;
+                    }
+                }
+            }
+        }
+
+        .img {
+            img {
+                width: 50rem;
+            }
+        }
+    }
+    
+}
+
+.sec-benefits {
+    margin-top: 2rem;
+    border-top: 1px solid #ddd;
+    @extend .sec-features, .intro;
+    padding-bottom: 4rem;
+    h2 {
+        margin-top: 1rem;
+    }
+
+    .benefits-cards {
+        max-width: 70vw;
+        margin: auto;
+        .feature {
+            .ordered {
+                margin-top: 4rem;
+            }
+        }
+
+    }
+}
+
+.sec-kpis {
+    background-color: components.$color-main;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-around;
+    color: white;
+
+    .kpi {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .number {
+            font-size: 3.5rem;
+            font-weight: 600;
+        }
+
+        .desc {
+            font-size: .9rem;
+            color: rgba(255, 255, 255, 0.644);
+        }
+    }
+}
+
+.on-boarding {
+    @extend .sec-features, .intro;
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2rem;
+
+    .steps {
+        padding: 0 2rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        width: 80%;
+
+        .step-separator {
+            flex: 1;
+            border-top: 1px solid #ddd;
+        }
+    }
+    
+}
+
+.footer {
+    @extend .sec-features, .intro;
+    background-color: #f4f8fe;
+    border-top: 1px solid components.$color-main;
+    border-bottom: 1px solid components.$color-main;
+    padding: 2rem;
+    background-image: url(../assets/img/astro.webp);
+    background-repeat: no-repeat;
+    background-position: 100%;
+    background-position-y: top;
+    .footer-cta {
+        padding: 1rem;
+        width: 45%;
+    }
+
+    .cta-button {
+        padding: 0.5 1.5rem;
+    }
+
+}
+
+@media(max-width: 768px) {
+    .steps {
+        flex-direction: column;
+
+        .icon-desk {
+            .text {
+                text-align: center;
+            }
+        }
+    }
+
+    .footer {
+        background-image: none;
+
+        .footer-cta {
+            width: 100%;
+            margin: auto;
+        }
+    }
+
+    .on-boarding {
+        .intro {
+            margin: auto;
+        }
+    }
+
+    .sec-features {
+        .intro {
+            h2 {
+                text-align: center;
+                width: 90%;
+            }
+
+            p {
+                width: 90%;
+            }
+        }
+        .features {
+            .text {
+                .feature {
+                    .description {
+                        max-width: 80%;
+                    }
+                }
+            }
+        }
+    }
+
+    .home-cta {
+        margin-left: -3rem;
+    }
+}
