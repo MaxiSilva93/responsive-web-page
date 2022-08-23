@@ -212,6 +212,10 @@ body {
 }
 
 @media(max-width: 768px) {
+    body {
+        padding: 0;
+        margin: 0;
+    }
     .steps {
         flex-direction: column;
 
@@ -237,11 +241,25 @@ body {
         }
     }
 
+    .sec-home {
+        padding: 0;
+        
+        .home-cta {
+            width: 80%;
+            padding: 1rem;
+
+            .home-title {
+                width: 80%;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+            }
+        }
+    }
     .sec-features {
         .intro {
             h2 {
                 text-align: center;
-                width: 90%;
+                width: 100vw;
             }
 
             p {
@@ -249,12 +267,16 @@ body {
             }
         }
         .features {
-            .text {
-                .feature {
-                    .description {
-                        max-width: 80%;
-                    }
-                }
+            flex: 1;
+            padding: 0;
+            margin: auto;
+            width: 85%;
+    }
+
+    .sec-benefits {
+        .intro {
+            p {
+                text-align: center;
             }
         }
     }
